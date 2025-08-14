@@ -1,14 +1,21 @@
 <template>
   <div class="container mt-5">
     <div class="row">
-      <div class="col-md-8 offset-md-2">
-
-        <h1 class="text-center mb-4" style="text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);">
-        User information form/credential
+      <div class="col-12 text-center">
+        <h1 style="white-space: nowrap; text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);">
+          User information form/credential
         </h1>
+      </div>
+    </div>
 
+    <div class="row mt-4">
+      <div class="col-md-4 text-center d-flex align-items-center justify-content-center">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
+             alt="Vue Logo" style="max-width: 150px;">
+      </div>
+
+      <div class="col-md-8">
         <form @submit.prevent="submitForm">
-
           <div class="mb-3">
             <label for="username" class="form-label">username：</label>
             <input type="text" id="username" class="form-control" v-model="formData.username" required />
@@ -39,27 +46,26 @@
             </select>
           </div>
 
-          <button type="submit" class="btn btn-primary me-2">sumbit</button>
-          <button type="button" class="btn btn-secondary" @click="clearForm">cleanning</button>
+          <button type="submit" class="btn btn-primary me-2">submit</button>
+          <button type="button" class="btn btn-secondary" @click="clearForm">cleaning</button>
         </form>
+      </div>
+    </div>
 
-        <div class="row mt-5" v-if="submittedCards.length">
-          <div class="d-flex flex-wrap justify-content-start">
-            <div v-for="(card, index) in submittedCards" :key="index" class="card m-2" style="width: 18rem;">
-              <div class="card-header text-white bg-primary">
-                User information
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Username: {{ card.username }}</li>
-                <li class="list-group-item">password: {{ card.password }}</li>
-                <li class="list-group-item">Australian residents？: {{ card.isAustralian ? 'yes' : 'no' }}</li>
-                <li class="list-group-item">sex: {{ card.gender }}</li>
-                <li class="list-group-item">Reasons for joining: {{ card.reason }}</li>
-              </ul>
-            </div>
+    <div class="row mt-5" v-if="submittedCards.length">
+      <div class="d-flex flex-wrap justify-content-start">
+        <div v-for="(card, index) in submittedCards" :key="index" class="card m-2" style="width: 18rem;">
+          <div class="card-header text-white bg-primary">
+            User information
           </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Username: {{ card.username }}</li>
+            <li class="list-group-item">Password: {{ card.password }}</li>
+            <li class="list-group-item">Australian residents？: {{ card.isAustralian ? 'yes' : 'no' }}</li>
+            <li class="list-group-item">Sex: {{ card.gender }}</li>
+            <li class="list-group-item">Reasons for joining: {{ card.reason }}</li>
+          </ul>
         </div>
-
       </div>
     </div>
   </div>
