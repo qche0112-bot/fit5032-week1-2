@@ -4,43 +4,43 @@
       <div class="col-md-8 offset-md-2">
 
         <h1 class="text-center mb-4" style="text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);">
-          用户信息表单 / 凭证
+        User information form/credential
         </h1>
 
         <form @submit.prevent="submitForm">
 
           <div class="mb-3">
-            <label for="username" class="form-label">用户名：</label>
+            <label for="username" class="form-label">username：</label>
             <input type="text" id="username" class="form-control" v-model="formData.username" required />
           </div>
 
           <div class="mb-3">
-            <label for="password" class="form-label">密码：</label>
+            <label for="password" class="form-label">password：</label>
             <input type="password" id="password" class="form-control" v-model="formData.password" required />
           </div>
 
           <div class="form-check mb-3">
             <input type="checkbox" id="isAustralian" class="form-check-input" v-model="formData.isAustralian" />
-            <label for="isAustralian" class="form-check-label">澳大利亚居民？</label>
+            <label for="isAustralian" class="form-check-label">Australian residents？</label>
           </div>
 
           <div class="mb-3">
-            <label for="reason" class="form-label">加入原因：</label>
+            <label for="reason" class="form-label">Reasons for joining：</label>
             <textarea id="reason" class="form-control" rows="3" v-model="formData.reason"></textarea>
           </div>
 
           <div class="mb-3">
-            <label for="gender" class="form-label">性别：</label>
+            <label for="gender" class="form-label">Sex：</label>
             <select id="gender" class="form-select" v-model="formData.gender" required>
-              <option value="" disabled selected>请选择</option>
-              <option value="female">女</option>
-              <option value="male">男</option>
-              <option value="other">其他</option>
+              <option value="" disabled selected>please selected</option>
+              <option value="female">female</option>
+              <option value="male">male</option>
+              <option value="other">other</option>
             </select>
           </div>
 
-          <button type="submit" class="btn btn-primary me-2">提交</button>
-          <button type="button" class="btn btn-secondary" @click="clearForm">清空</button>
+          <button type="submit" class="btn btn-primary me-2">sumbit</button>
+          <button type="button" class="btn btn-secondary" @click="clearForm">cleanning</button>
         </form>
 
         <div class="row mt-5" v-if="submittedCards.length">
@@ -50,11 +50,11 @@
                 用户信息
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">用户名: {{ card.username }}</li>
-                <li class="list-group-item">密码: {{ card.password }}</li>
-                <li class="list-group-item">澳大利亚居民: {{ card.isAustralian ? '是' : '否' }}</li>
-                <li class="list-group-item">性别: {{ card.gender }}</li>
-                <li class="list-group-item">加入原因: {{ card.reason }}</li>
+                <li class="list-group-item">Username: {{ card.username }}</li>
+                <li class="list-group-item">password: {{ card.password }}</li>
+                <li class="list-group-item">Australian residents?: {{ card.isAustralian ? '是' : '否' }}</li>
+                <li class="list-group-item">sex: {{ card.gender }}</li>
+                <li class="list-group-item">Reasons for joining: {{ card.reason }}</li>
               </ul>
             </div>
           </div>
@@ -79,7 +79,6 @@ const formData = ref({
 const submittedCards = ref([])
 
 function submitForm() {
-  // 深拷贝当前表单数据，避免后续修改影响已提交数据
   submittedCards.value.push({ ...formData.value })
   clearForm()
 }
@@ -96,7 +95,6 @@ function clearForm() {
 </script>
 
 <style scoped>
-/* 额外卡片样式 */
 .card {
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);

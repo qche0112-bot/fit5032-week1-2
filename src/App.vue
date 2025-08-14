@@ -2,7 +2,7 @@
 //import HelloWorld from './components/HelloWorld.vue'
 //import TheWelcome from './components/TheWelcome.vue'
 import Form from './components/form.vue'   
-// import Authors from './components/authors.vue'  <!-- 注释掉Authors -->
+//import Authors from './components/authors.vue'
 </script>
 
 <template>
@@ -16,13 +16,12 @@ import Form from './components/form.vue'
 
   <main>
     <TheWelcome />
-    <Form />       <!-- 替换Authors，显示Form组件 -->
+    <Form />      
     <!-- <Authors /> -->
   </main>
 </template>
 
 <style scoped>
-/* 你现有的样式不需要改 */
 header {
   line-height: 1.5;
 }
