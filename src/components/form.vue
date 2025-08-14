@@ -47,12 +47,12 @@
           <div class="d-flex flex-wrap justify-content-start">
             <div v-for="(card, index) in submittedCards" :key="index" class="card m-2" style="width: 18rem;">
               <div class="card-header text-white bg-primary">
-                用户信息
+                User information
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">Username: {{ card.username }}</li>
                 <li class="list-group-item">password: {{ card.password }}</li>
-                <li class="list-group-item">Australian residents?: {{ card.isAustralian ? '是' : '否' }}</li>
+                <li class="list-group-item">Australian residents？: {{ card.isAustralian ? 'yes' : 'no' }}</li>
                 <li class="list-group-item">sex: {{ card.gender }}</li>
                 <li class="list-group-item">Reasons for joining: {{ card.reason }}</li>
               </ul>
