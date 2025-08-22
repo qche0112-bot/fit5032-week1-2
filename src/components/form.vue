@@ -14,12 +14,12 @@
         <form @submit.prevent="submitForm">
           <div class="col-mb-6 col-sm-12">
             <label for="username" class="form-label">username：</label>
-            <input type="text" id="username" class="form-control" required v-model="formData.username" />
+            <input type="text" id="username" class="form-control" v-model="formData.username" />
           </div>
 
           <div class="col-mb-6 col-sm-12">
             <label for="password" class="form-label">password：</label>
-            <input type="password" id="password" class="form-control" minlength="4" maxlength="10" v-model="formData.password" required />
+            <input type="password" id="password" class="form-control" minlength="4" maxlength="10" v-model="formData.password" />
           </div>
 
           <div class="form-check ol-mb-6 col-sm-12">
@@ -34,7 +34,7 @@
 
           <div class="ol-mb-6 col-sm-12">
             <label for="gender" class="form-label">Gender：</label>
-            <select id="gender" class="form-select" v-model="formData.gender" required>
+            <select id="gender" class="form-select" v-model="formData.gender">
               <option value="" disabled selected>please selected</option>
               <option value="female">female</option>
               <option value="male">male</option>
