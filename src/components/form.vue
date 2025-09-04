@@ -18,8 +18,9 @@
           </div>
 
           <div class="col-mb-6 col-sm-12">
-            <label for="password" class="form-label">password：</label>
-            <input type="password" id="password" class="form-control" minlength="4" maxlength="10" v-model="formData.password" />
+            <label for="confirm-password" class="form-label">Confirm password：</label>
+            <input type="password" id="confirm-password" class="form-control" minlength="4" maxlength="10" v-model="formData.confirmPassword" />
+            <div v-if="errors.confirmPassword" class="text-danger">{{ errors.confirmPassword }}</div>
           </div>
 
           <div class="form-check ol-mb-6 col-sm-12">
@@ -73,6 +74,7 @@ import { ref } from 'vue'
 const formData = ref({
   username: '',
   password: '',
+  confirmPassword:'',
   isAustralian: false,
   reason: '',
   gender: ''
@@ -89,6 +91,7 @@ function clearForm() {
   formData.value = {
     username: '',
     password: '',
+    confirmPassword: '',
     isAustralian: false,
     reason: '',
     gender: ''
